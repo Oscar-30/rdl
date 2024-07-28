@@ -1,0 +1,268 @@
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.black-ops-one-regular {
+    font-family: "Black Ops One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+nav {
+    max-width: 100%;
+    margin: auto;
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.imagenInicio img {
+    min-width: 220px;
+    max-width: 350px;
+}
+
+.item {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.item-barra a {
+    position: relative;
+    padding-bottom: 0.5rem;
+    color: white;
+    text-decoration: none;
+    font-size: medium;
+    font-family: "Black Ops One", system-ui;
+}
+
+.item-barra a::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    left: 0;
+    background-color: red;
+    transition: all 0.3s ease;
+}
+
+.item-barra a:hover::after {
+    width: 100%;
+}
+
+.sombra {
+    position: absolute;
+    box-shadow: 0 0 1000px 50px red;
+    z-index: -100;
+}
+
+header .contenido {
+    position: relative;
+    margin-bottom: 2rem; /* Ajustar espacio entre header y contenido */
+}
+
+header .contenido h3 {
+    margin-bottom: 1rem;
+    color: white;
+    font-size: 3rem;
+    font-weight: 600;
+    font-family: "Black Ops One", system-ui;
+    text-align: center;
+}
+
+header.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* Ajustar altura del header */
+    position: relative;
+    text-align: center;
+}
+
+.login .contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    margin-top: 0; /* Reducir margen superior */
+}
+
+.login .card {
+    background-color: #333;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    width: 100%;
+    margin-top: 0; /* Reducir margen superior */
+}
+
+.login .card label {
+    font-family: 'Black Ops One', sans-serif;
+    margin-bottom: 0.5rem;
+    color: white;
+    display: block;
+}
+
+.login .card input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-family: 'Arial', sans-serif;
+}
+
+.login .card .btn {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Black Ops One', sans-serif;
+    background-color: #000;
+    color: white;
+    cursor: pointer;
+}
+
+.login .card .btn:hover {
+    background-color: red;
+}
+
+#error-message {
+    font-family: 'Black Ops One', sans-serif;
+    margin-top: 1rem;
+    text-align: center;
+    color: red;
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 1rem;
+    }
+
+    .menu-movil {
+        background-color: rgba(19, 1, 1, 0.975);
+        height: 100vh;
+        width: 100%;
+        max-width: 100%;
+        position: fixed;
+        top: 0;
+        right: -1050px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+        font-size: 3rem;
+        transition: .3s ease;
+        margin-top: 100px;
+        z-index: 1000;
+    }
+
+    .item {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu-movil.active {
+        right: 0;
+    }
+
+    .hamburguesa {
+        height: 50px;
+        width: 50px;
+        margin-left: auto;
+        position: relative;
+        z-index: 1000;
+    }
+
+    .hamburguesa span {
+        height: 5px;
+        width: 100%;
+        background-color: rgb(72, 3, 72);
+        border-radius: 25px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: .3s ease;
+    }
+
+    .hamburguesa span:nth-child(1) {
+        top: 25%;
+    }
+
+    .hamburguesa span:nth-child(3) {
+        top: 75%;
+    }
+
+    .hamburguesa.active span:nth-child(1) {
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .hamburguesa.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburguesa.active span:nth-child(3) {
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    .imagenInicio img {
+        max-width: 40px;
+    }
+
+    header .contenido h3 {
+        font-size: 2rem;
+    }
+    
+    .login .contenedor {
+        height: auto;
+        margin-top: 0;
+    }
+
+    .login .card {
+        margin-top: 0;
+    }
+}
+
+.btn {
+    font-family: "Black Ops One", system-ui;
+    font-size: large;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 6px;
+}
+
+.btn:hover {
+    background-color: red;
+}
+
+.perfil {
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 7px;
+}

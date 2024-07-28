@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arenal 2024</title>
+    <link rel="stylesheet" href="arenal2024.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Black+Ops+One&display=swap');
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="imagenInicio">
+            <a href="index.html"><img src="img/rdl-summer-tour-2024.jpg"></a>
+        </div>
+
+        <div class="hamburguesa">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="menu-movil">
+            <ul class="item">
+                <li class="item-barra"><a href="juegos.html">Juegos RDL</a></li>
+                <li class="item-barra"><a href="arenal2024.html">Arenal 2024</a></li>
+                <li class="item-barra"><a href="#">Contacto</a></li>
+                <li class="item-barra"><a href="tienda.html">Tienda</a></li>
+                <li class="item-barra" id="login-logout-button"><a href="login.html">Iniciar Sesión</a></li>
+                <div class="perfil">
+                    <img src="img/user-line.png" alt="User Icon" id="profileImage">
+                </div>
+                <p id="username-display" style="color: white; font-family: 'Black Ops One', sans-serif; text-align: center;"></p>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="main">
+        <div class="contenido">
+            <span class="sombra"></span>
+            <span class="sombra"></span>
+            <h3>Arenal 2024</h3>
+        </div>
+    </header>
+
+    <section class="arenal">
+        <div class="contenedor">
+            <div class="card" id="martes-30">
+                <h5>Martes 30</h5>
+                <p><input type="checkbox" class="vote" data-concert="Carlittos" data-day="martes-30"> Carlittos | 17:00 - 18:30 | Cutty Sark Pool Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Nadal 015" data-day="martes-30"> Nadal 015 | 18:30 - 19:45 | Repsol Beach Club</p>
+                <p><input type="checkbox" class="vote" data-concert="Lia Kali" data-day="martes-30"> Lia Kali | 20:15 - 21:30 | Repsol Beach Club</p>
+                <p><input type="checkbox" class="vote" data-concert="Recycled J" data-day="martes-30"> Recycled J | 22:00 - 23:30 | Repsol Beach Club</p>
+                <p><input type="checkbox" class="vote" data-concert="Denom" data-day="martes-30"> Denom | 0:00 - 1:20 | Repsol Beach Club</p>
+                <p><input type="checkbox" class="vote" data-concert="DJ Nano" data-day="martes-30"> DJ Nano | 1:30 - 3:00 | Repsol Beach Club</p>
+                <button class="show-votes btn" data-day="martes-30">Mostrar Votaciones</button>
+                <div class="votes-display" style="display: none;">
+                    <h3>Votaciones:</h3>
+                    <ul class="votes-list"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="contenedor">
+            <div class="card" id="miercoles-31">
+                <h5>Miércoles 31</h5>
+                <p><input type="checkbox" class="vote" data-concert="Jberen" data-day="miercoles-31"> Jberen | 17:00 - 18:00 | Cutty Sark Pool Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="MVRK" data-day="miercoles-31"> MVRK | 18:00 - 18:45 | Repsol Beach Club</p>
+                <p><input type="checkbox" class="vote" data-concert="Israel B" data-day="miercoles-31"> Israel B | 19:10 - 20:10 | Repsol Beach Club</p>
+                <p><input type="checkbox" class="vote" data-concert="J Abecia" data-day="miercoles-31"> J Abecia | 20:30 - 21:40 | Repsol Beach Club</p>
+                <p><input type="checkbox" class="vote" data-concert="Denna" data-day="miercoles-31"> Denna | 22:00 - 22:50 | Repsol Beach Club</p>
+                <p><input type="checkbox" class="vote" data-concert="Dei V" data-day="miercoles-31"> Dei V | 23:20 - 0:20 | Repsol Beach Club</p>
+                <p><input type="checkbox" class="vote" data-concert="Jose de Rico" data-day="miercoles-31"> Jose de Rico | 0:40 - 1:30 | Repsol Beach Club</p>
+                <p><input type="checkbox" class="vote" data-concert="DJ Ballesteros" data-day="miercoles-31"> DJ Ballesteros | 1:40 - 3:00 | Repsol Beach Club</p>
+                <button class="show-votes btn" data-day="miercoles-31">Mostrar Votaciones</button>
+                <div class="votes-display" style="display: none;">
+                    <h3>Votaciones:</h3>
+                    <ul class="votes-list"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="contenedor">
+            <div class="card" id="jueves-1">
+                <h5>Jueves 1</h5>
+                <p><input type="checkbox" class="vote" data-concert="LI4M" data-day="jueves-1"> LI4M | 15:00 - 15:40 | Cutty Sark Pool Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Sosad.97" data-day="jueves-1"> Sosad.97 | 15:40 - 16:20 | Cutty Sark Pool Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="LI4M" data-day="jueves-1"> LI4M | 16:20 - 16:50 | Cutty Sark Pool Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Sara Socas" data-day="jueves-1"> Sara Socas | 16:50 - 17:30 | Cutty Sark Pool Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="LI4M" data-day="jueves-1"> LI4M | 17:30 - 18:00 | Cutty Sark Pool Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Yeico X Toni" data-day="jueves-1"> Yeico X Toni | 18:00 - 18:40 | Cutty Sark Pool Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="LI4M" data-day="jueves-1"> LI4M | 18:40 - 19:10 | Cutty Sark Pool Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Jim" data-day="jueves-1"> Jim | 19:10 - 20:00 | Cutty Sark Pool Stage</p>
+                <p> </p>
+                <p><input type="checkbox" class="vote" data-concert="La Pegatina" data-day="jueves-1"> La Pegatina | 19:50 - 21:05 | Heineken Main Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Cali y el Dandee" data-day="jueves-1"> Cali y el Dandee | 21:55 - 23:15 | Heineken Main Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Aitana" data-day="jueves-1"> Aitana | 0:05 - 1:35 | Heineken Main Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Juan Magan" data-day="jueves-1"> Juan Magan | 2:30 - 4:00 | Heineken Main Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="José de las Heras" data-day="jueves-1"> José de las Heras | 4:30 - 6:00 | Heineken Main Stage</p>
+                <p> </p>
+                <p><input type="checkbox" class="vote" data-concert="Malmo 040" data-day="jueves-1"> Malmo 040 | 19:00 - 19:50 | Negrita Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Pepe y Vizio" data-day="jueves-1"> Pepe y Vizio | 21:05 - 21:55 | Negrita Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="La Zowi" data-day="jueves-1"> La Zowi | 23:15 - 0:05 | Negrita Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Gente de Zona" data-day="jueves-1"> Gente de Zona | 1:35 - 2:30 | Negrita Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Juliann James & Mzrin" data-day="jueves-1"> Juliann James & Mzrin |  | Negrita Stage</p>
+                <p> </p>
+                <p><input type="checkbox" class="vote" data-concert="Hey Kid" data-day="jueves-1"> Hey Kid | 20:00 - 21:00 | Repsol Beach Club Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Pol 3.14" data-day="jueves-1"> Pol 3.14 | 21:30 - 22:45 | Repsol Beach Club Stage</p>
+                <p><input type="checkbox" class="vote" data-day="jueves-1"> Pol Granch | 23:15 - 0:35 | Repsol Beach Club Stage</p>
+                <p><input type="checkbox" class="vote" data-day="jueves-1"> Parkineos | 1:00 - 2:15 | Repsol Beach Club Stage</p>
+                <p><input type="checkbox" class="vote" data-day="jueves-1"> Ramsek | 2:35 - 3:30 | Repsol Beach Club Stage</p>
+                <p><input type="checkbox" class="vote" data-day="jueves-1"> Amygdala | 3:45 - 5:00 | Repsol Beach Club Stage</p>
+                <button class="show-votes btn" data-day="jueves-1">Mostrar Votaciones</button>
+                <div class="votes-display" style="display: none;">
+                    <h3>Votaciones:</h3>
+                    <ul class="votes-list"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="contenedor">
+            <div class="card" id="viernes-2">
+                <h5>Viernes 2</h5>
+                <p><input type="checkbox" class="vote" data-concert="Rodry Soler" data-day="viernes-2"> Rodry Soler | 15:00 - 16:15 | Cutty Sark Pool Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Carmen de la fuente" data-day="viernes-2"> Carmen de la fuente | 16:15 - 17:30 | Cutty Sark Pool Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Lucia de la Puerta" data-day="viernes-2"> Lucia de la Puerta | 17:30 - 18:10 | Cutty Sark Pool Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="DJ Ram" data-day="viernes-2"> DJ Ram | 18:10 - 19:10 | Cutty Sark Pool Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Anthony Godfather" data-day="viernes-2"> Anthony Godfather | 19:10 - 20:00 | Cutty Sark Pool Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Chimeno" data-day="viernes-2"> Chimeno | 20:00 - 21:00 | Cutty Sark Pool Stage</p>
+                <p> </p>
+                <p><input type="checkbox" class="vote" data-concert="Nil Moliner" data-day="viernes-2"> Nil Moliner | 19:50 - 21:10 | Heineken Main Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Naiara" data-day="viernes-2"> Naiara | 22:00 - 22:30 | Heineken Main Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Louis Tomilson" data-day="viernes-2"> Louis Tomilson | 23:20 - 0:40 | Heineken Main Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Funzo & Baby Loud" data-day="viernes-2"> Funzo & Baby Loud | 2:00 - 3:30 | Heineken Main Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Alvama Ice" data-day="viernes-2"> Alvama Ice | 4:30 - 6:00 | Heineken Main Stage</p>
+                <p> </p>
+                <p><input type="checkbox" class="vote" data-concert="Chema Rivas" data-day="viernes-2"> Chema Rivas | 19:00 - 19:50 | Negrita Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Raul Clyde" data-day="viernes-2"> Raul Clyde | 21:10 - 22:00 | Negrita Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="FMK" data-day="viernes-2"> FMK | 22:30 - 23:20 | Negrita Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Luc Loren" data-day="viernes-2"> Luc Loren | 0:40 - 2:00 | Negrita Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Les Castizos" data-day="viernes-2"> Les Castizos | 3:30 - 4:30 | Negrita Stage</p>
+                <p> </p>
+                <p><input type="checkbox" class="vote" data-concert="Enol" data-day="viernes-2"> Enol | 21:00 - 22:00 | Repsol Beach Club Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="The Tyets" data-day="viernes-2"> The Tyets | 22:30 - 23:40 | Repsol Beach Club Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Fusa Nocta" data-day="viernes-2"> Fusa Nocta | 0:10 - 1:00 | Repsol Beach Club Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="OMGisNeff" data-day="viernes-2"> OMGisNeff | 1:30 - 2:30 | Repsol Beach Club Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Barce" data-day="viernes-2"> Barce | 2:45 - 3:40 | Repsol Beach Club Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Selecta" data-day="viernes-2"> Selecta | 3:50 - 5:00 | Repsol Beach Club Stage</p>
+                <button class="show-votes btn" data-day="viernes-2">Mostrar Votaciones</button>
+                <div class="votes-display" style="display: none;">
+                    <h3>Votaciones:</h3>
+                    <ul class="votes-list"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="contenedor">
+            <div class="card" id="sabado-3">
+                <h5>Sábado 3</h5>
+                <p><input type="checkbox" class="vote" data-concert="Facundo Majdalani" data-day="sabado-3"> Facundo Majdalani | 15:00 - 15:40 | Cutty Sark Pool Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Delgao" data-day="sabado-3"> Delgao | 15:40 - 16:20 | Cutty Sark Pool Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Facundo Majdalani" data-day="sabado-3"> Facundo Majdalani | 16:20 - 16:50 | Cutty Sark Pool Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Bon Caliso" data-day="sabado-3"> Bon Caliso | 16:50 - 17:30 | Cutty Sark Pool Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Facundo Majdalani" data-day="sabado-3"> Facundo Majdalani | 17:30 - 18:00 | Cutty Sark Pool Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Lennis Rodríguez" data-day="sabado-3"> Lennis Rodríguez | 18:00 - 18:40 | Cutty Sark Pool Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Facundo Majdalani" data-day="sabado-3"> Facundo Majdalani | 18:40 - 19:10 | Cutty Sark Pool Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Zakyo" data-day="sabado-3"> Zakyo | 19:10 - 20:00 | Cutty Sark Pool Stage</p>
+                <p> </p>
+                <p><input type="checkbox" class="vote" data-concert="Hens" data-day="sabado-3"> Hens | 19:50 - 21:00 | Heineken Main Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Maikel Delacalle" data-day="sabado-3"> Maikel Delacalle | 21:50 - 23:05 | Heineken Main Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Yandel" data-day="sabado-3"> Yandel | 0:00 - 1:00 | Heineken Main Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Cano" data-day="sabado-3"> Cano | 2:15 - 3:30 | Heineken Main Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Bresh" data-day="sabado-3"> Bresh | 4:30 - 6:00 | Heineken Main Stage</p>
+                <p> </p>
+                <p><input type="checkbox" class="vote" data-concert="Arce" data-day="sabado-3"> Arce | 19:00 - 19:50 | Negrita Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Pedro Capó" data-day="sabado-3"> Pedro Capó | 21:00 - 21:50 | Negrita Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Abhir" data-day="sabado-3"> Abhir | 23:05 - 0:00 | Negrita Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Henry Mendez" data-day="sabado-3"> Henry Mendez | 1:00 - 2:15 | Negrita Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Michenlo" data-day="sabado-3"> Michenlo | 3:30 - 4:30 | Negrita Stage</p>
+                <p> </p>
+                <p><input type="checkbox" class="vote" data-concert="R Climent" data-day="sabado-3"> R Climent | 20:00 - 20:30 | Repsol Beach Club Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Noan" data-day="sabado-3"> Noan | 20:50 - 22:00 | Repsol Beach Club Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Alex Wall" data-day="sabado-3"> Alex Wall |22:30 - 23:40 | Repsol Beach Club Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Julieta" data-day="sabado-3"> Julieta | 0:10 - 1:10 | Repsol Beach Club Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Rakky Ripper" data-day="sabado-3"> Rakky Ripper | 1:30 - 2:30 | Repsol Beach Club Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Ardiya" data-day="sabado-3"> Ardiya | 2:45 - 3:40 | Repsol Beach Club Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Xina Mora" data-day="sabado-3"> Xina Mora | 3:50 - 5:00 | Repsol Beach Club Stage</p>
+                <button class="show-votes btn" data-day="sabado-3">Mostrar Votaciones</button>
+                <div class="votes-display" style="display: none;">
+                    <h3>Votaciones:</h3>
+                    <ul class="votes-list"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="contenedor">
+            <div class="card" id="domingo-4">
+                <h5>Domingo 4</h5>
+                <p><input type="checkbox" class="vote" data-concert="Alex Lumbier" data-day="domingo-4"> Alex Lumbier | 15:00 - 15:40 | Cutty Sark Pool Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Los Xavales DJ SET" data-day="domingo-4"> Los Xavales DJ SET | 15:40 - 16:20 | Cutty Sark Pool Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Alex Lumbier" data-day="domingo-4"> Alex Lumbier | 16:20 - 16:50 | Cutty Sark Pool Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Elilluminari" data-day="domingo-4"> Elilluminari | 16:50 - 17:30 | Cutty Sark Pool Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Alex Lumbier" data-day="domingo-4"> Alex Lumbier | 17:30 - 18:00 | Cutty Sark Pool Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Antony Z" data-day="domingo-4"> Antony Z | 18:00 - 18:40 | Cutty Sark Pool Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Alex Lumbier" data-day="domingo-4"> Alex Lumbier | 18:40 - 19:10 | Cutty Sark Pool Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Balaclavx" data-day="domingo-4"> Balaclavx | 19:10 - 20:00 | Cutty Sark Pool Stage</p>
+                <p> </p>
+                <p><input type="checkbox" class="vote" data-concert="Hard GZ" data-day="domingo-4"> Hard GZ | 19:50 - 21:00 | Heineken Main Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="RVFV" data-day="domingo-4"> RVFV | 22:00 - 23:15 | Heineken Main Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Morad" data-day="domingo-4"> Morad | 0:15 - 1:40 | Heineken Main Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Lola Índigo" data-day="domingo-4"> Lola Índigo | 2:30 - 4:00 | Heineken Main Stage</p>
+                <p> </p>
+                <p><input type="checkbox" class="vote" data-concert="Reality" data-day="domingo-4"> Reality | 19:00 - 19:50 | Negrita Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Kidd Keo" data-day="domingo-4"> Kidd Keo | 21:00 - 22:00 | Negrita Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Soto ASA" data-day="domingo-4"> Soto ASA | 23:10 - 0:15 | Negrita Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Soge Culebra" data-day="domingo-4"> Soge Culebra | 1:40 - 2:30 | Negrita Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Sara Krin" data-day="domingo-4"> Sara Krin | 4:00 - 4:30 | Negrita Stage</p>
+                <p> </p>
+                <p><input type="checkbox" class="vote" data-concert="Marina Reche" data-day="domingo-4"> Marina Reche | 20:00 - 21:00 | Repsol Beach Club Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Céro" data-day="domingo-4"> Céro | 21:30 - 22:30 | Repsol Beach Club Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Almacor" data-day="domingo-4"> Almacor | 23:00 - 23:50 | Repsol Beach Club Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Mar Lucas" data-day="domingo-4"> Mar Lucas | 0:20 - 1:20 | Repsol Beach Club Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Garabatto" data-day="domingo-4"> Garabatto | 1:40 - 3:00 | Repsol Beach Club Stage</p>
+                <button class="show-votes btn" data-day="domingo-4">Mostrar Votaciones</button>
+                <div class="votes-display" style="display: none;">
+                    <h3>Votaciones:</h3>
+                    <ul class="votes-list"></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        const hamburguesa = document.querySelector('.hamburguesa');
+        const menu_movil = document.querySelector('.menu-movil');
+
+        hamburguesa.addEventListener('click', () => {
+            hamburguesa.classList.toggle('active');
+            menu_movil.classList.toggle('active');
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = JSON.parse(localStorage.getItem('loggedInUser'));
+            const loginLogoutButton = document.getElementById('login-logout-button');
+            const profileImage = document.getElementById('profileImage');
+            const usernameDisplay = document.getElementById('username-display');
+            const voteCheckboxes = document.querySelectorAll('.vote');
+            const showVotesButtons = document.querySelectorAll('.show-votes');
+
+            if (user) {
+                loginLogoutButton.innerHTML = '<a href="#" id="logout-button">Cerrar Sesión</a>';
+                profileImage.src = user.profileImage;
+                usernameDisplay.textContent = user.username;
+
+                document.getElementById('logout-button').addEventListener('click', () => {
+                    localStorage.removeItem('loggedInUser');
+                    window.location.href = 'index.html';
+                });
+
+                // Cargar las votaciones del usuario desde localStorage
+                const userVotes = JSON.parse(localStorage.getItem('votes')) || {};
+                if (userVotes[user.username]) {
+                    userVotes[user.username].forEach(concert => {
+                        const checkbox = document.querySelector(`.vote[data-concert="${concert}"]`);
+                        if (checkbox) checkbox.checked = true;
+                    });
+                }
+
+                // Guardar las votaciones del usuario en localStorage
+                voteCheckboxes.forEach(checkbox => {
+                    checkbox.addEventListener('change', () => {
+                        const votedConcerts = Array.from(voteCheckboxes)
+                            .filter(checkbox => checkbox.checked)
+                            .map(checkbox => checkbox.dataset.concert);
+
+                        userVotes[user.username] = votedConcerts;
+                        localStorage.setItem('votes', JSON.stringify(userVotes));
+                    });
+                });
+
+                showVotesButtons.forEach(button => {
+                    button.addEventListener('click', (event) => {
+                        const day = event.target.dataset.day;
+                        const card = document.getElementById(day);
+                        const votesList = card.querySelector('.votes-list');
+                        const votesDisplay = card.querySelector('.votes-display');
+                        votesList.innerHTML = '';
+
+                        const allVotes = JSON.parse(localStorage.getItem('votes')) || {};
+                        const concerts = {};
+
+                        for (const [username, votedConcerts] of Object.entries(allVotes)) {
+                            votedConcerts.forEach(concert => {
+                                const concertDay = document.querySelector(`.vote[data-concert="${concert}"]`).dataset.day;
+                                if (concertDay === day) {
+                                    if (!concerts[concert]) {
+                                        concerts[concert] = [];
+                                    }
+                                    concerts[concert].push(username);
+                                }
+                            });
+                        }
+
+                        for (const [concert, users] of Object.entries(concerts)) {
+                            const concertItem = document.createElement('li');
+                            concertItem.textContent = `${concert}: ${users.join(', ')}`;
+                            votesList.appendChild(concertItem);
+                        }
+
+                        votesDisplay.style.display = 'block';
+                    });
+                });
+            } else {
+                voteCheckboxes.forEach(checkbox => {
+                    checkbox.disabled = true;
+                });
+
+                showVotesButtons.forEach(button => {
+                    button.disabled = true;
+                });
+            }
+        });
+    </script>
+</body>
+</html>

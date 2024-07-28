@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda</title>
+    <link rel="stylesheet" href="tienda.css"></link>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Black+Ops+One&display=swap');
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="imagenInicio">
+            <a href="index.html"><img src="img/rdl-summer-tour-2024.jpg"></a>
+        </div>
+
+        <div class="hamburguesa">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="menu-movil">
+            <ul class="item">
+                <li class="item-barra"><a href="juegos.html">Juegos RDL</a></li>
+                <li class="item-barra"><a href="arenal2024.html">Arenal 2024</a></li>
+                <li class="item-barra"><a href="#">Contacto</a></li>
+                <li class="item-barra"><a href="tienda.html">Tienda</a></li>
+                <li class="item-barra" id="login-logout-button"><a href="login.html">Iniciar Sesión</a></li>
+                <div class="perfil">
+                    <img src="img/user-line.png" alt="User Icon" id="profileImage">
+                </div>
+                <p id="username-display" style="color: white; font-family: 'Black Ops One', sans-serif; text-align: center;"></p>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="main">
+        <div class="contenido">
+            <span class="sombra"></span>
+            <span class="sombra"></span>
+            <h3>Próximamente</h3>
+        </div>
+
+    </header>
+
+    <script>
+        const hamburguesa = document.querySelector('.hamburguesa');
+        const menu_movil = document.querySelector('.menu-movil');
+
+        hamburguesa.addEventListener('click', () => {
+            hamburguesa.classList.toggle('active');
+            menu_movil.classList.toggle('active');
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = JSON.parse(localStorage.getItem('loggedInUser'));
+            const loginLogoutButton = document.getElementById('login-logout-button');
+            const profileImage = document.getElementById('profileImage');
+            const usernameDisplay = document.getElementById('username-display');
+
+            if (user) {
+                loginLogoutButton.innerHTML = '<a href="#" id="logout-button">Cerrar Sesión</a>';
+                profileImage.src = user.profileImage;
+                usernameDisplay.textContent = user.username;
+                document.getElementById('logout-button').addEventListener('click', () => {
+                    localStorage.removeItem('loggedInUser');
+                    window.location.href = 'index.html';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

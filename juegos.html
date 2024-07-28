@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos RDL</title>
+    <link rel="stylesheet" href="juegos.css"></link>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.0.1/remixicon.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Black+Ops+One&display=swap');
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="imagenInicio">
+            <a href="index.html"><img src="img/rdl-summer-tour-2024.jpg"></a>
+        </div>
+
+        <div class="hamburguesa">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="menu-movil">
+            <ul class="item">
+                <li class="item-barra"><a href="juegos.html">Juegos RDL</a></li>
+                <li class="item-barra"><a href="arenal2024.html">Arenal 2024</a></li>
+                <li class="item-barra"><a href="#">Contacto</a></li>
+                <li class="item-barra"><a href="tienda.html">Tienda</a></li>
+                <li class="item-barra" id="login-logout-button"><a href="login.html">Iniciar Sesión</a></li>
+                <div class="perfil">
+                    <img src="img/user-line.png" alt="User Icon" id="profileImage">
+                </div>
+                <p id="username-display" style="color: white; font-family: 'Black Ops One', sans-serif; text-align: center;"></p>
+            </ul>
+        </div>
+    </nav>
+    <section class="juegos">
+        <div class="contenedor">
+            <div class="card">
+                <p class="palito">VII</p>
+                <h5>Palito Palito</h5>
+                <p>El juego consiste en que cada jugador deberá ir contando en números romanos, pero no se podrán contar ni el 7 ni múltiplos de 7: (7, 14, 21, 28, 35, etc...). El que falle bebe.</p>
+            </div>
+            <div class="card">
+                <span><i class="ri-sword-line"></i></span>
+                <h5>Verdad o Reto</h5>
+                <p>Un clásico. Cada jugador elige en su turno verdad o reto. Si se verdad se respondera a LO QUE SEA que se pregunte. Si se elige reto se hará LO QUE SEA que se proponga.</p>
+            </div>
+            <div class="card">
+                <span><i class="ri-beer-line"></i></span>
+                <h5>Yo nunca</h5>
+                <p>Otro clásico. Un jugador dice algo que nunca haya hecho y el que lo haya hecho alguna vez bebe.</p>
+            </div>
+            <div class="card">
+                <span><i class="ri-drag-move-2-fill"></i></span>
+                <h5>Pim Pam Pum</h5>
+                <p>Un jugador comienza diciendo Pim, el de su derecha dice Pam, y el siguiente tiene que decir el Pum señalando a la persona que comenzará la siguiente ronda diciendo Pim. El que falle o no señale o lo diga demasiado lento bebe.</p>
+            </div>
+            <div class="card">
+                <span><i class="ri-arrow-left-right-line"></i></span>
+                <h5>¿Qué y Cuándo?</h5>
+                <p>Cada jugador le dirá al jugador de la derecha lo que tiene que hacer y al jugador de la izquierda le dirá cuándo lo tiene que hacer. El objetivo es ir adivinando que hace cáda jugador y cuándo.</p>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <script>
+        const hamburguesa = document.querySelector('.hamburguesa');
+        const menu_movil = document.querySelector('.menu-movil');
+
+        hamburguesa.addEventListener('click', () => {
+            hamburguesa.classList.toggle('active');
+            menu_movil.classList.toggle('active');
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = JSON.parse(localStorage.getItem('loggedInUser'));
+            const loginLogoutButton = document.getElementById('login-logout-button');
+            const profileImage = document.getElementById('profileImage');
+            const usernameDisplay = document.getElementById('username-display');
+
+            if (user) {
+                loginLogoutButton.innerHTML = '<a href="#" id="logout-button">Cerrar Sesión</a>';
+                profileImage.src = user.profileImage;
+                usernameDisplay.textContent = user.username;
+                document.getElementById('logout-button').addEventListener('click', () => {
+                    localStorage.removeItem('loggedInUser');
+                    window.location.href = 'index.html';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
