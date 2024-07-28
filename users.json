@@ -88,5 +88,10 @@
         "username": "malena",
         "password": "malena123",
         "profileImage": "img/beer-line.png"
+    },
+    {
+        "username": "mar",
+        "password": "mar789",
+        "profileImage": "img/beer-line.png"
     }
 ]
