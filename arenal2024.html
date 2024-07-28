@@ -8,6 +8,27 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Black+Ops+One&display=swap');
     </style>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAe472aX7OQuopikaqqfJ_pln1eXzQ9hU",
+            authDomain: "rdl-arenal2024.firebaseapp.com",
+            projectId: "rdl-arenal2024",
+            storageBucket: "rdl-arenal2024.appspot.com",
+            messagingSenderId: "180575264592",
+            appId: "1:180575264592:web:dd79864ea8b8b5ff6d1655",
+            measurementId: "G-CBLZJ50BS4"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+    </script>
 </head>
 <body>
     <nav>
@@ -105,10 +126,10 @@
                 <p> </p>
                 <p><input type="checkbox" class="vote" data-concert="Hey Kid" data-day="jueves-1"> Hey Kid | 20:00 - 21:00 | Repsol Beach Club Stage</p>
                 <p><input type="checkbox" class="vote" data-concert="Pol 3.14" data-day="jueves-1"> Pol 3.14 | 21:30 - 22:45 | Repsol Beach Club Stage</p>
-                <p><input type="checkbox" class="vote" data-day="jueves-1"> Pol Granch | 23:15 - 0:35 | Repsol Beach Club Stage</p>
-                <p><input type="checkbox" class="vote" data-day="jueves-1"> Parkineos | 1:00 - 2:15 | Repsol Beach Club Stage</p>
-                <p><input type="checkbox" class="vote" data-day="jueves-1"> Ramsek | 2:35 - 3:30 | Repsol Beach Club Stage</p>
-                <p><input type="checkbox" class="vote" data-day="jueves-1"> Amygdala | 3:45 - 5:00 | Repsol Beach Club Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Pol Granch" data-day="jueves-1"> Pol Granch | 23:15 - 0:35 | Repsol Beach Club Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Parkineos" data-day="jueves-1"> Parkineos | 1:00 - 2:15 | Repsol Beach Club Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Ramsek" data-day="jueves-1"> Ramsek | 2:35 - 3:30 | Repsol Beach Club Stage</p>
+                <p><input type="checkbox" class="vote" data-concert="Amygdala" data-day="jueves-1"> Amygdala | 3:45 - 5:00 | Repsol Beach Club Stage</p>
                 <button class="show-votes btn" data-day="jueves-1">Mostrar Votaciones</button>
                 <div class="votes-display" style="display: none;">
                     <h3>Votaciones:</h3>
@@ -253,24 +274,27 @@
                     window.location.href = 'index.html';
                 });
 
-                // Cargar las votaciones del usuario desde localStorage
-                const userVotes = JSON.parse(localStorage.getItem('votes')) || {};
-                if (userVotes[user.username]) {
-                    userVotes[user.username].forEach(concert => {
-                        const checkbox = document.querySelector(`.vote[data-concert="${concert}"]`);
-                        if (checkbox) checkbox.checked = true;
-                    });
-                }
+                // Cargar las votaciones del usuario desde Firestore
+                db.collection("votes").doc(user.username).get().then((doc) => {
+                    if (doc.exists) {
+                        const votedConcerts = doc.data().concerts;
+                        votedConcerts.forEach(concert => {
+                            const checkbox = document.querySelector(`.vote[data-concert="${concert}"]`);
+                            if (checkbox) checkbox.checked = true;
+                        });
+                    }
+                });
 
-                // Guardar las votaciones del usuario en localStorage
+                // Guardar las votaciones del usuario en Firestore
                 voteCheckboxes.forEach(checkbox => {
                     checkbox.addEventListener('change', () => {
                         const votedConcerts = Array.from(voteCheckboxes)
                             .filter(checkbox => checkbox.checked)
                             .map(checkbox => checkbox.dataset.concert);
 
-                        userVotes[user.username] = votedConcerts;
-                        localStorage.setItem('votes', JSON.stringify(userVotes));
+                        db.collection("votes").doc(user.username).set({
+                            concerts: votedConcerts
+                        });
                     });
                 });
 
@@ -282,28 +306,30 @@
                         const votesDisplay = card.querySelector('.votes-display');
                         votesList.innerHTML = '';
 
-                        const allVotes = JSON.parse(localStorage.getItem('votes')) || {};
-                        const concerts = {};
-
-                        for (const [username, votedConcerts] of Object.entries(allVotes)) {
-                            votedConcerts.forEach(concert => {
-                                const concertDay = document.querySelector(`.vote[data-concert="${concert}"]`).dataset.day;
-                                if (concertDay === day) {
-                                    if (!concerts[concert]) {
-                                        concerts[concert] = [];
+                        db.collection("votes").get().then((querySnapshot) => {
+                            const concerts = {};
+                            querySnapshot.forEach((doc) => {
+                                const username = doc.id;
+                                const votedConcerts = doc.data().concerts;
+                                votedConcerts.forEach(concert => {
+                                    const concertDay = document.querySelector(`.vote[data-concert="${concert}"]`).dataset.day;
+                                    if (concertDay === day) {
+                                        if (!concerts[concert]) {
+                                            concerts[concert] = [];
+                                        }
+                                        concerts[concert].push(username);
                                     }
-                                    concerts[concert].push(username);
-                                }
+                                });
                             });
-                        }
 
-                        for (const [concert, users] of Object.entries(concerts)) {
-                            const concertItem = document.createElement('li');
-                            concertItem.textContent = `${concert}: ${users.join(', ')}`;
-                            votesList.appendChild(concertItem);
-                        }
+                            for (const [concert, users] of Object.entries(concerts)) {
+                                const concertItem = document.createElement('li');
+                                concertItem.textContent = `${concert}: ${users.join(', ')}`;
+                                votesList.appendChild(concertItem);
+                            }
 
-                        votesDisplay.style.display = 'block';
+                            votesDisplay.style.display = 'block';
+                        });
                     });
                 });
             } else {
